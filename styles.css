@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 body {
     display: flex;
@@ -13,10 +12,19 @@ body {
     background-image: url('./images/background.jpeg');
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+}
+.img-container .photo-credit {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+.img-container a {
+    color: white;
 }
 .odin-banner {
     position: relative;
-    top: 20%;
+    bottom: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
