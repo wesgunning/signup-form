@@ -86,7 +86,12 @@ ul li:not(:last-of-type) {
     border: 2px solid black;
 }
 input {
-    height: 1.5rem;
+    appearance: none;
+    outline: none;
+    height: 1.8rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-left: 4px;
 }
 .input-container label {
     font-size: 0.8rem;
@@ -124,12 +129,21 @@ input + span::before {
     bottom: 0.4rem;
 }
 input:focus {
-    box-shadow: 2px 2px 5px;
+    box-shadow: 3px 3px 5px grey;
+}
+input:invalid:not(:placeholder-shown) {
+    border: 2px solid red;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 1px red;
+}
+input:invalid:not(:placeholder-shown) + span::before {
+    content: "✖";
+    color: red;
 }
 input:valid {
     border: 2px solid #33cc33;
     border-radius: 4px;
-    box-shadow: 0 0 5px 2px #33cc33;
+    box-shadow: 0 0 5px 1px #33cc33;
 }
 input:valid + span::before {
     content: "✓";
