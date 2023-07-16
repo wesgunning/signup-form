@@ -39,11 +39,33 @@ body {
     max-height: 75%;
 }
 .content {
+    background-color: #f1e7da;
     max-width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
+}
+.content>p {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    max-width: 75%;
+    margin-bottom: 1.5rem;
+}
+.content>p,
+.input-container,
+.submit-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.input-container>p {
+    font-size: 1.3rem;
 }
 ul {
     display: flex;
@@ -53,8 +75,63 @@ ul li {
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    width: 200px;
+    padding-top: 1.5rem;
+}
+ul li:not(:last-of-type) {
+    padding-right: 2rem;
 }
 .input-container {
-    height: 20vh;
+    height: fit-content;
     border: 2px solid black;
+}
+input {
+    height: 1.5rem;
+}
+.input-container label {
+    font-size: 0.8rem;
+}
+button {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: #084571;
+    border-style: none;
+    border-radius: 4px;
+}
+button:hover {
+    cursor: pointer;
+    color: #084571;
+    background-color: white;
+}
+.submit-container * {
+    margin-top: 1rem;
+}
+.submit-container p {
+    font-size: 0.8rem;
+}
+.submit-container p a {
+    text-decoration: none;
+    color: #084571;
+    font-weight: bold;
+}
+input + span {
+    position: relative;
+}
+input + span::before {
+    position: absolute;
+    right: -1.2rem;
+    bottom: 0.4rem;
+}
+input:focus {
+    box-shadow: 2px 2px 5px;
+}
+input:valid {
+    border: 2px solid #33cc33;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 2px #33cc33;
+}
+input:valid + span::before {
+    content: "✓";
+    color:#33cc33;
 }
