@@ -1,5 +1,6 @@
 const pwd = document.getElementById('pwd');
 pwd.addEventListener('input', compare);
+pwd.addEventListener('input', length);
 const confirm = document.getElementById('confirm');
 confirm.addEventListener('input', compare)
 
@@ -23,4 +24,11 @@ function compare() {
         confirm.setCustomValidity('Invalid');
         return false;
     }
+}
+function length() {
+    
+    const p = document.createElement('p');
+    p.textContent = ' MUST BE AT LEAST 8 CHARACTERS';
+    p.classList.add('error', 'length');
+    pwd.parentElement.appendChild(p);
 }

@@ -6,7 +6,7 @@ body {
     display: flex;
     height: 100vh;
     width: 100vw;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 .img-container {
     min-width: 40%;
@@ -34,6 +34,7 @@ body {
     height: 20%;
     background: rgba(0, 0, 0, 0.6);
     color: white;
+    font-size: 3rem;
 }
 .odin-banner img {
     max-height: 75%;
@@ -76,14 +77,15 @@ ul li {
     flex-direction: column;
     list-style-type: none;
     width: 200px;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
 }
 ul li:not(:last-of-type) {
     padding-right: 2rem;
 }
 .input-container {
     height: fit-content;
-    border: 2px solid black;
+    background-color: white;
+    box-shadow: 0 2px 5px grey;
 }
 input {
     appearance: none;
@@ -128,24 +130,50 @@ input + span::before {
     right: -1.2rem;
     bottom: 0.4rem;
 }
+input + span::after {
+    position: absolute;
+    top: 5px;
+    color: red;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+input[type='email']:invalid:not(:placeholder-shown):not(:focus) + span::after {
+    content: "\f071  Please enter a valid email address";
+    font-size: 0.7rem;
+    font-weight: normal;
+    font-family: FontAwesome;
+}
+input[type='tel']:invalid:not(:placeholder-shown):not(:focus) + span::after {
+    content: '\f071  Please enter a 10-digit phone number';
+    font-weight: normal;
+    font-family: FontAwesome;
+}
 input:focus {
     box-shadow: 3px 3px 5px grey;
 }
-input:invalid:not(:placeholder-shown) {
+input:invalid:not(:placeholder-shown):not(:focus) {
     border: 2px solid red;
     border-radius: 4px;
     box-shadow: 0 0 5px 1px red;
 }
-input:invalid:not(:placeholder-shown) + span::before {
+input:invalid:not(:placeholder-shown):not(:focus) + span::before {
     content: "✖";
     color: red;
 }
-input:valid {
+input:valid:not(:focus) {
     border: 2px solid #33cc33;
     border-radius: 4px;
     box-shadow: 0 0 5px 1px #33cc33;
 }
-input:valid + span::before {
+input:valid:not(:focus) + span::before {
     content: "✓";
     color:#33cc33;
+}
+.error {
+    color: red;
+    font-size: 0.7rem;
+}
+.error:before {
+    content: '\f071';
+    font: normal normal normal 14px/1 FontAwesome;
 }
