@@ -160,12 +160,16 @@ input:invalid:not(:placeholder-shown):not(:focus) + span::before {
     content: "✖";
     color: red;
 }
-input:valid:not(:focus) {
+input:valid:not(:focus),
+#pwd:valid,
+#confirm:valid {
     border: 2px solid #33cc33;
     border-radius: 4px;
     box-shadow: 0 0 5px 1px #33cc33;
 }
-input:valid:not(:focus) + span::before {
+input:valid:not(:focus) + span::before,
+#pwd:valid + span::before,
+#confirm:valid + span::before {
     content: "✓";
     color:#33cc33;
 }
