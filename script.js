@@ -71,15 +71,17 @@ function upperCheck() {
         }
     }
 }
-/* function symbolCheck() {
+function symbolCheck() {
     for (i=0; i<pwd.parentElement.children.length; i++) {
         if(Boolean(pwd.parentElement.children[i].classList.contains('symbol'))) {
             for (j=0; j<pwd.value.length; j++) {
                 const reg = /[^a-zA-Z0-9 \s]/;
                 if (reg.test(pwd.value[j])) {
                     pwd.parentElement.removeChild(pwd.parentElement.children[i]);
+                    return;
                 }
             }
+            return;
         }
         else if (i == pwd.parentElement.children.length -1) {
             const sym = document.createElement('p');
@@ -88,4 +90,4 @@ function upperCheck() {
             pwd.parentElement.appendChild(sym);
         }
     }
-} */
+}
